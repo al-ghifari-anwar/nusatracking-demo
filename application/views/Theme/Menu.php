@@ -119,11 +119,11 @@
 <!-- /.navbar -->
 
 <!-- Main Sidebar Container -->
-<aside class="main-sidebar sidebar-dark-primary elevation-4">
+<aside class="main-sidebar sidebar-light-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="index3.html" class="brand-link">
-        <!-- <img src="<?= base_url('assets/img/etc/logo_retina.png') ?>" alt="AdminLTE Logo" class="brand-image" style="opacity: .8"> -->
-        <span class="brand-text font-weight-light">Dissindo</span>
+    <a href="<?= base_url() ?>" class="">
+        <img src="<?= base_url('assets/img/etc/logo_retina.png') ?>" alt="AdminLTE Logo" class="brand-image ml-3 mt-3" style="opacity: 1; width: 120px;">
+        <span class="brand-text font-weight-light">&nbsp;</span>
     </a>
 
     <!-- Sidebar -->
@@ -133,9 +133,9 @@
             <div class="image">
                 <!-- <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image"> -->
             </div>
-            <div class="info">
+            <!-- <div class="info">
                 <a href="#" class="d-block">Nusa Tracking</a>
-            </div>
+            </div> -->
         </div>
 
         <!-- Sidebar Menu -->

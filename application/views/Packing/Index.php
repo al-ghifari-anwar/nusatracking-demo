@@ -77,12 +77,12 @@
                                 <table id="example2" class="table table-bordered table-hover">
                                     <thead>
                                         <tr>
-                                            <th>Batch No.</th>
-                                            <th>Product Name</th>
-                                            <th>Date</th>
                                             <th>Target</th>
                                             <th>Actual</th>
                                             <th>Difference</th>
+                                            <th>Batch No.</th>
+                                            <th>Product Name</th>
+                                            <th>Date</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -95,12 +95,12 @@
                                         $totalActual += $dataPacking['actual'];
                                          ?>
                                             <tr>
-                                                <td><?= $dataPacking['batch_no'] ?></td>
-                                                <td><?= $dataPacking['product_name'] ?></td>
-                                                <td><?= date('H:i:s d M , Y', strtotime($dataPacking['date_packer'])) ?></td>
                                                 <td><?= $dataPacking['target'] ?></td>
                                                 <td><?= $dataPacking['actual'] ?></td>
                                                 <td><?= number_format($dataPacking['actual'] - $dataPacking['target'], 2, '.', ',')  ?></td>
+                                                <td><?= $dataPacking['batch_no'] ?></td>
+                                                <td><?= $dataPacking['product_name'] ?></td>
+                                                <td><?= date('H:i:s d M , Y', strtotime($dataPacking['date_packer'])) ?></td>
                                             </tr>
                                         <?php endforeach; ?>
                                     </tbody>
