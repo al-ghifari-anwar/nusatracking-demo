@@ -21,8 +21,7 @@
     <div class="content">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-lg-4 col-6">
-                    <!-- small box -->
+                <!-- <div class="col-lg-4 col-6">
                     <div class="small-box bg-info">
                         <div class="inner">
                             <span class="text-dark">TOTAL PRODUKSI</span>
@@ -49,11 +48,9 @@
                             <div class="mt-3"></div>
                             <p><i>4% meningkat</i> dari bulan lalu</p>
                         </div>
-                            <!-- <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a> -->
                     </div>
                 </div>
                 <div class="col-lg-4 col-6">
-                    <!-- small box -->
                     <div class="small-box bg-primary">
                         <div class="inner">
                             <span class="text-dark">TEMUAN MASALAH</span>
@@ -80,11 +77,9 @@
                             <div class="mt-3"></div>
                             <p><i>10% menurun</i> dari bulan lalu</p>
                         </div>
-                            <!-- <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a> -->
                     </div>
                 </div>
                 <div class="col-lg-4 col-6">
-                    <!-- small box -->
                     <div class="small-box bg-indigo">
                         <div class="inner">
                             <span class="text-dark">CAPAIAN TARGET</span>
@@ -111,41 +106,31 @@
                             <div class="mt-3"></div>
                             <p><i>20% meningkat</i> dari bulan lalu</p>
                         </div>
-                            <!-- <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a> -->
                     </div>
-                </div>
+                </div> -->
                 <div class="col-12">
-                    <div class="card">
+                    <!-- solid sales graph -->
+                    <div class="card card-success">
                         <div class="card-header">
-                            <h3 class="card-title">
-                            <i class="fas fa-chart-pie mr-1"></i>
-                            Sales
-                            </h3>
+                            <h3 class="card-title">Bar Chart</h3>
+
                             <div class="card-tools">
-                            <ul class="nav nav-pills ml-auto">
-                                <li class="nav-item">
-                                <a class="nav-link active" href="#revenue-chart" data-toggle="tab">Area</a>
-                                </li>
-                                <li class="nav-item">
-                                <a class="nav-link" href="#sales-chart" data-toggle="tab">Donut</a>
-                                </li>
-                            </ul>
+                            <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                <i class="fas fa-minus"></i>
+                            </button>
+                            <button type="button" class="btn btn-tool" data-card-widget="remove">
+                                <i class="fas fa-times"></i>
+                            </button>
                             </div>
-                        </div><!-- /.card-header -->
+                        </div>
                         <div class="card-body">
-                            <div class="tab-content p-0">
-                            <!-- Morris chart - Sales -->
-                            <div class="chart tab-pane active" id="revenue-chart"
-                                style="position: relative; height: 300px;">
-                                <canvas id="revenue-chart-canvas" height="300" style="height: 300px;"></canvas>
-                            </div>
-                            <div class="chart tab-pane" id="sales-chart" style="position: relative; height: 300px;">
-                                <canvas id="sales-chart-canvas" height="300" style="height: 300px;"></canvas>
-                            </div>
-                            </div>
-                        </div><!-- /.card-body -->
+                            <div class="chart">
+                            <canvas id="barChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+                        </div>
                     </div>
-                    <!-- /.card -->
+                    <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
                     
                 </div>
             </div>

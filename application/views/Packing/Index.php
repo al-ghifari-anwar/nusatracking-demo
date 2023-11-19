@@ -25,24 +25,31 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="row">
-                                <div class="col-4">
+                                <div class="col-12">
+                                    <label for="">Batch Number: </label>
                                     <form method="GET" action="" id="formBatch">
-                                        <div class="form-group">
-                                            <div class="row">
-                                                <label for="">Batch Number: </label>
-                                                <input type="text" class="form-control" name="batch_no" onchange="document.getElementById('formBatch').submit()">
-                                                
+                                        <div class="row">
+                                            <label for="">From: &nbsp;</label>
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" name="batch_no1">
+                                            </div>
+                                            <label for="">&nbsp;To: &nbsp;</label>
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" name="batch_no2">
+                                            </div>
+                                            <div class="form-group ml-3">
+                                                <button type="submit" class="btn btn-primary">Filter</button>
                                             </div>
                                         </div>
                                     </form>
                                 </div>
                                 <div class="col-2"></div>
                                 <div class="col-12">
-                                    <?php if(isset($_GET['batch_no'])) :?>
+                                    <?php if(isset($_GET['batch_no1']) && isset($_GET['batch_no2'])) :?>
                                         <?php
-                                        $dossweigh = $this->db->get_where('tb_packer', ['batch_no' => $_GET['batch_no']])->row_array();
+                                        $dossweigh = $this->db->get_where('tb_packer', ['batch_no >=' => $_GET['batch_no1'], 'batch_no <=' => $_GET['batch_no2']])->row_array();
                                              ?>
-                                        <table>
+                                        <!-- <table>
                                             <tr>
                                                 <th>Batch Number</th>
                                                 <th>:</th>
@@ -53,21 +60,16 @@
                                                 <th>:</th>
                                                 <td><?= $dossweigh['product_name'] ?></td>
                                             </tr>
-                                            <!-- <tr>
-                                                <th>Date</th>
-                                                <th>:</th>
-                                                <td><?= date("d M, Y H:i", strtotime($dossweigh['date_dossweigh'])) ?></td>
-                                            </tr> -->
-                                        </table>
+                                        </table> -->
                                     <?php endif; ?>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <?php if(isset($_GET['batch_no'])) :?>
+                <?php if(isset($_GET['batch_no1']) && isset($_GET['batch_no2'])) :?>
                     <?php 
-                    $packings = $this->db->get_where('tb_packer', ['batch_no' => $_GET['batch_no']])->result_array();
+                    $packings = $this->db->get_where('tb_packer', ['batch_no >=' => $_GET['batch_no1'], 'batch_no <=' => $_GET['batch_no2']])->result_array();
                     ?>
                     <div class="col-12">
                         <div class="card">
@@ -75,6 +77,7 @@
                                 <table id="example2" class="table table-bordered table-hover">
                                     <thead>
                                         <tr>
+                                            <th>Batch No.</th>
                                             <th>Product Name</th>
                                             <th>Date</th>
                                             <th>Target</th>
@@ -92,6 +95,7 @@
                                         $totalActual += $dataPacking['actual'];
                                          ?>
                                             <tr>
+                                                <td><?= $dataPacking['batch_no'] ?></td>
                                                 <td><?= $dataPacking['product_name'] ?></td>
                                                 <td><?= date('H:i:s d M , Y', strtotime($dataPacking['date_packer'])) ?></td>
                                                 <td><?= $dataPacking['target'] ?></td>
